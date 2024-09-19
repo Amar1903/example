@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Personal Information</title>
+    <style>
+        /* Set the background color and font family for the whole page */
+        body {
+            background: url(bg.jpg) no-repeat;
+            background-color: rgb(243, 160, 222);
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-size: cover;
+            background-position: center;
+            margin-bottom: 50px;
+        }
+
+        /* Center the form and limit the width */
+        form {
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(88, 161, 230, 0.897);
+            width: 400px;
+            margin: auto;
+        }
+
+        /* Style the h1 header */
+        h1 {
+            color: #f8f8fcc2;
+            font-size: 24px;
+        }
+
+        /* Style the table and its contents */
+        table {
+            width: 100%;
+            margin-bottom: 20px;
+        }
+
+        td {
+            padding: 10px;
+        }
+
+        label {
+            font-weight: bold;
+            color: #c3c9dd;
+        }
+
+        /* Style the input fields */
+        input[type="text"], input[type="email"], input[type="password"], input[type="date"], textarea {
+            width: 100%;
+            padding: 8px;
+            border-radius: 5px;
+            border: 1px solid #be7676;
+            font-size: 14px;
+        }
+
+        input[type="radio"], input[type="checkbox"] {
+            margin-right: 5px;
+        }
+
+        /* Style the submit and reset buttons */
+        input[type="submit"], input[type="reset"], input[type="Button"] {
+            background-color: #202122af;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-right: 10px;
+        }
+
+        input[type="submit"]:hover, input[type="reset"]:hover, input[type="Button"]:hover {
+            background-color: #45a049;
+        }
+
+        /* Style the hobby checkboxes */
+        .hobbies {
+            margin-top: 10px;
+        }
+
+        /* Media Queries */
+        @media (max-width: 768px) { /* Tablet */
+            form {
+                width: 90%;
+            }
+
+            h1 {
+                font-size: 20px;
+            }
+        }
+
+        @media (max-width: 480px) { /* Mobile */
+            form {
+                width: 95%;
+            }
+
+            h1 {
+                font-size: 18px;
+            }
+
+            input[type="submit"], input[type="reset"], input[type="Button"] {
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <center>
+        <br><br><br><br>
+        <h1>PERSONAL INFORMATION</h1>
+        <form>
+            <table>
+                <tr>
+                    <td><label for="fname">First Name:</label></td>
+                    <td><input type="text" id="fname" placeholder="Enter your First Name" required></td>
+                </tr>
+                <tr>
+                    <td><label for="lname">Last Name:</label></td>
+                    <td><input type="text" id="lname" placeholder="Enter your Last Name" required></td>
+                </tr>
+                <tr>
+                    <td><label>Gender:</label></td>
+                    <td>
+                        <input type="radio" name="gender" id="Male" value="Male" required>Male
+                        <input type="radio" name="gender" id="FeMale" value="FeMale" required>Female
+                    </td>
+                </tr>
+                <tr>
+                    <td><label for="dob">Date of Birth:</label></td>
+                    <td><input type="date" id="dob" required></td>
+                </tr>
+                <tr>
+                    <td><label for="email">Email:</label></td>
+                    <td><input type="email" id="email" placeholder="Enter your Email" required></td>
+                </tr>
+                <tr>
+                    <td><label for="password">Password:</label></td>
+                    <td><input type="password" id="password" placeholder="Enter your Password" required></td>
+                </tr>
+                <tr>
+                    <td><label for="Address">Address:</label></td>
+                    <td><textarea id="Address" cols="20" rows="3" placeholder="Enter your Address" required></textarea></td>
+                </tr>
+                <tr>
+                    <td><label for="num">Mobile:</label></td>
+                    <td><input type="text" id="num" placeholder="Enter your Mobile Number" required></td>
+                </tr>
+            </table>
+
+            <label>Hobbies:</label><br>
+            <div class="hobbies">
+                <input type="checkbox" id="h1" value="Reading">Reading
+                <input type="checkbox" id="h2" value="Playing Games">Playing
+                <input type="checkbox" id="h3" value="Dancing">Dancing
+                <input type="checkbox" id="h4" value="Cooking">Cooking
+            </div>
+
+            <br>
+            <input type="submit" value="Submit">
+            <input type="reset" value="Reset"><br><br>
+            <a href="index.html"><input type="button" value="Login"></a>
+        </form>
+    </center>
+</body>
+</html>
