@@ -1,168 +1,123 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Personal Information</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
-        /* Set the background color and font family for the whole page */
-        body {
-            background: url(bg.jpg) no-repeat;
-            background-color: rgb(243, 160, 222);
-            font-family: Arial, sans-serif;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            background-size: cover;
-            background-position: center;
-            margin-bottom: 50px;
+        * {
+            box-sizing: border-box;
         }
 
-        /* Center the form and limit the width */
-        form {
+        .row::after {
+            content: "";
+            clear: both;
+            display: block;
+        }
+
+        [class*="col-"] {
+            float: left;
+            padding: 15px;
+        }
+
+        html {
+            font-family: "Lucida Sans", sans-serif;
+        }
+
+        .header {
+            background-color: #f530aa;
+            color: #ffffff;
+            padding: 15px;
+            text-align: center;
+        }
+
+        .form-container {
+            background-color: #f9f9f9;
             padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0px 0px 10px rgba(88, 161, 230, 0.897);
-            width: 400px;
-            margin: auto;
-        }
-
-        /* Style the h1 header */
-        h1 {
-            color: #f8f8fcc2;
-            font-size: 24px;
-        }
-
-        /* Style the table and its contents */
-        table {
-            width: 100%;
-            margin-bottom: 20px;
-        }
-
-        td {
-            padding: 10px;
+            border-radius: 8px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
         }
 
         label {
-            font-weight: bold;
-            color: #c3c9dd;
+            display: block;
+            margin-bottom: 5px;
+            color: #333;
         }
 
-        /* Style the input fields */
-        input[type="text"], input[type="email"], input[type="password"], input[type="date"], textarea {
+        input {
             width: 100%;
-            padding: 8px;
-            border-radius: 5px;
-            border: 1px solid #be7676;
-            font-size: 14px;
-        }
-
-        input[type="radio"], input[type="checkbox"] {
-            margin-right: 5px;
-        }
-
-        /* Style the submit and reset buttons */
-        input[type="submit"], input[type="reset"], input[type="Button"] {
-            background-color: #202122af;
-            color: white;
             padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #33b5e5;
+            color: white;
             border: none;
-            border-radius: 5px;
+            border-radius: 4px;
             cursor: pointer;
-            font-size: 16px;
-            margin-right: 10px;
         }
 
-        input[type="submit"]:hover, input[type="reset"]:hover, input[type="Button"]:hover {
-            background-color: #45a049;
+        button:hover {
+            background-color: #0099cc;
         }
 
-        /* Style the hobby checkboxes */
-        .hobbies {
-            margin-top: 10px;
+        .footer {
+            background-color: #0099cc;
+            color: #ffffff;
+            text-align: center;
+            font-size: 12px;
+            padding: 15px;
         }
 
-        /* Media Queries */
-        @media (max-width: 768px) { /* Tablet */
-            form {
-                width: 90%;
+        /* For desktop: */
+        .col-6 { width: 50%; }
+        .col-12 { width: 100%; }
+
+        @media only screen and (max-width: 768px) {
+            /* For tablets and mobile phones: */
+            .col-6, .col-12 {
+                width: 100%;
             }
 
-            h1 {
-                font-size: 20px;
-            }
-        }
-
-        @media (max-width: 480px) { /* Mobile */
-            form {
-                width: 95%;
-            }
-
-            h1 {
-                font-size: 18px;
-            }
-
-            input[type="submit"], input[type="reset"], input[type="Button"] {
-                font-size: 14px;
+            .form-container {
+                padding: 15px;
             }
         }
     </style>
 </head>
 <body>
-    <center>
-        <br><br><br><br>
-        <h1>PERSONAL INFORMATION</h1>
-        <form>
-            <table>
-                <tr>
-                    <td><label for="fname">First Name:</label></td>
-                    <td><input type="text" id="fname" placeholder="Enter your First Name" required></td>
-                </tr>
-                <tr>
-                    <td><label for="lname">Last Name:</label></td>
-                    <td><input type="text" id="lname" placeholder="Enter your Last Name" required></td>
-                </tr>
-                <tr>
-                    <td><label>Gender:</label></td>
-                    <td>
-                        <input type="radio" name="gender" id="Male" value="Male" required>Male
-                        <input type="radio" name="gender" id="FeMale" value="FeMale" required>Female
-                    </td>
-                </tr>
-                <tr>
-                    <td><label for="dob">Date of Birth:</label></td>
-                    <td><input type="date" id="dob" required></td>
-                </tr>
-                <tr>
-                    <td><label for="email">Email:</label></td>
-                    <td><input type="email" id="email" placeholder="Enter your Email" required></td>
-                </tr>
-                <tr>
-                    <td><label for="password">Password:</label></td>
-                    <td><input type="password" id="password" placeholder="Enter your Password" required></td>
-                </tr>
-                <tr>
-                    <td><label for="Address">Address:</label></td>
-                    <td><textarea id="Address" cols="20" rows="3" placeholder="Enter your Address" required></textarea></td>
-                </tr>
-                <tr>
-                    <td><label for="num">Mobile:</label></td>
-                    <td><input type="text" id="num" placeholder="Enter your Mobile Number" required></td>
-                </tr>
-            </table>
 
-            <label>Hobbies:</label><br>
-            <div class="hobbies">
-                <input type="checkbox" id="h1" value="Reading">Reading
-                <input type="checkbox" id="h2" value="Playing Games">Playing
-                <input type="checkbox" id="h3" value="Dancing">Dancing
-                <input type="checkbox" id="h4" value="Cooking">Cooking
-            </div>
+    <div class="header">
+        <h1>Registration</h1>
+    </div>
 
-            <br>
-            <input type="submit" value="Submit">
-            <input type="reset" value="Reset"><br><br>
-            <a href="index.html"><input type="button" value="Login"></a>
-        </form>
-    </center>
+    <div class="row">
+        <div class="col-6 form-container">
+            <form action="#" method="post">
+                <label for="username">Username</label>
+                <input type="text" id="username" name="username" required>
+
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" required>
+
+                <label for="confirm-password">Confirm Password</label>
+                <input type="password" id="confirm-password" name="confirm-password" required>
+
+                <button type="submit">Register</button>
+            </form>
+        </div>
+    </div>
+
+    <div class="footer">
+        <p>Resize the browser window to see how the content responds to resizing.</p>
+    </div>
+
 </body>
 </html>
